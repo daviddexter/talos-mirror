@@ -3,8 +3,8 @@ def test_latest():
     print('\n >>> start Latest Features... \n')
 
     import talos
-    from keras.models import Sequential
-    from keras.layers import Dense
+    from tensorflow.keras.models import Sequential
+    from tensorflow.keras.layers import Dense
 
     x, y = talos.templates.datasets.iris()
 

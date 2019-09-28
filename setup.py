@@ -24,15 +24,17 @@ try:
 except ImportError:
     from distutils.core import setup
 
-install_requires = ['wrangle',
+install_requires = ['git+https://github.com/daviddexter/wrangle-mirror.git',
+                    'tensorflow',
                     'numpy',
-                    'pandas',
-                    'keras',
+                    'pandas', 
+                    'sklearn',                  
                     'astetik',
                     'sklearn',
+                    'matplotlib'
                     'tqdm',
-                    'chances',
-                    'kerasplotlib',
+                    'ipython'
+                    'chances',                   
                     'requests']
 
 
@@ -60,7 +62,8 @@ if __name__ == "__main__":
                     'talos.metrics',
                     'talos.commands',
                     'talos.logging',
-                    'talos.autom8'],
+                    'talos.autom8',
+                    'talos.kerasplotlib',],
 
           classifiers=['Intended Audience :: Science/Research',
                        'Programming Language :: Python :: 2.7',

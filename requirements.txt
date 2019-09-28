@@ -1,10 +1,13 @@
-wrangle
 pandas
 numpy
-keras
+tensorflow
+git+https://github.com/daviddexter/wrangle-mirror.git
 astetik
 tqdm
 sklearn
 chances
-kerasplotlib
 requests
+memory-profiler
+sklearn
+matplotlib
+ipython

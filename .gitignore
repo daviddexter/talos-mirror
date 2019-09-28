@@ -4,6 +4,8 @@ __pycache__
 *.csv
 *.log
 dist/
+venv/
+venv-keras-only/
 talos.egg-info
 .idea/
 *.zip

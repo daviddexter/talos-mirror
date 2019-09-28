@@ -3,7 +3,7 @@ def test_autom8():
     import talos
     import wrangle
 
-    from keras.optimizers import Adam
+    from tensorflow.keras.optimizers import Adam
 
     print('\n >>> start AutoParams()... \n')
 
@@ -19,7 +19,7 @@ def test_autom8():
     p.kernel_initializers(['zeros'])
     p.last_activations(['softmax'])
     p.layers(0, 2, 1)
-    p.losses([talos.utils.metrics.f1score])
+    p.losses([talos.utils.metrics.F1Score()])
     p.lr([0.01])
     p.networks(['dense'])
     p.neurons(1, 5, 1)

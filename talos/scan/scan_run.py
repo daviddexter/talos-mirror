@@ -21,9 +21,9 @@ def scan_run(self):
         # break when there is no more permutations left
         if self.round_params is False:
             break
-        # otherwise proceed with next permutation
+        # otherwise proceed with next permutation        
         from .scan_round import scan_round
-        self = scan_round(self)
+        self = scan_round(self)        
         self.pbar.update(1)
 
     # close progress bar before finishing
@@ -32,6 +32,7 @@ def scan_run(self):
     # finish
     from ..logging.logging_finish import logging_finish
     self = logging_finish(self)
+    
 
     from .scan_finish import scan_finish
     self = scan_finish(self)
