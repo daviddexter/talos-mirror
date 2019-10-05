@@ -2,8 +2,8 @@
 
 export MPLBACKEND=agg
 
-mprof run ./test/performance/memory_pressure.py
-python ./test/performance/memory_pressure_check.py
+# mprof run ./test/performance/memory_pressure.py
+# python ./test/performance/memory_pressure_check.py
 python test_script.py
 rm *.zip
 rm *.csv

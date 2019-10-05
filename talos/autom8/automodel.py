@@ -48,19 +48,20 @@ class AutoModel:
         or a list of metrics from user."""
 
         import talos as ta
+        from tensorflow.keras.metrics import MeanAbsoluteError
 
         if self.task in ['binary', 'multiclass', 'multilabel']:
-            return [ta.utils.metrics.f1score, 'acc']
+            return ['acc']
         elif self.task == 'continuous':
-            return [ta.utils.metrics.mae, 'acc']
+            return [MeanAbsoluteError() , 'acc']
 
     def _create_input_model(self, x_train, y_train, x_val, y_val, params):
 
         import wrangle as wr
 
-        from keras.models import Sequential
-        from keras.layers import Dropout, Flatten
-        from keras.layers import LSTM, Conv1D, SimpleRNN, Dense, Bidirectional
+        from tensorflow.keras.models import Sequential
+        from tensorflow.keras.layers import Dropout, Flatten
+        from tensorflow.keras.layers import LSTM, Conv1D, SimpleRNN, Dense, Bidirectional
 
         model = Sequential()
 
@@ -113,7 +114,8 @@ class AutoModel:
         model.compile(optimizer=optimizer,
                       loss=params['losses'],
                       metrics=self.metrics)
-
+        
+        
         # fit the model
         out = model.fit(x_train, y_train,
                         batch_size=params['batch_size'],

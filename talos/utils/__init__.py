@@ -1,7 +1,6 @@
 # In this init we load everything under utils in the Talos namespace
 
-from kerasplotlib import TrainingLog as live
-
+from ..kerasplotlib import TrainingLog as live
 from ..model.normalizers import lr_normalizer
 from ..model.hidden_layers import hidden_layers
 from ..model.early_stopper import early_stopper

@@ -1,9 +1,9 @@
 import talos
 from talos.utils import SequenceGenerator
 
-from keras.models import Sequential
-from keras.layers import Dense, Dropout, Flatten
-from keras.layers import Conv2D
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout, Flatten
+from tensorflow.keras.layers import Conv2D
 
 p = {'activation': ['relu'],
      'optimizer': ['AdaDelta'],
@@ -28,7 +28,7 @@ def talos_version():
 
         model.compile(optimizer=params['optimizer'],
                       loss=params['losses'],
-                      metrics=['acc', talos.utils.metrics.f1score])
+                      metrics=['acc', talos.utils.metrics.F1Score()])
 
         out = model.fit_generator(SequenceGenerator(x_train,
                                                     y_train,

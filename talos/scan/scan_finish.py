@@ -65,6 +65,6 @@ def scan_finish(self):
     self.evaluate_models = func_evaluate.__get__(self)
 
     # reset the index
-    self.data.index = range(len(self.data))
+    self.data.index = range(len(self.data))    
 
     return self
